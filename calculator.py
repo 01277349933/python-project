@@ -19,13 +19,13 @@ class Calculator:
         self.root.geometry("400x500")
         self.root.resizable(False, False)
         
-        # متغيرات الحالة
+        
         self.current_input = ""
         self.total = 0
         self.operation = None
         self.new_number = True
         
-        # إعداد الواجهة الرسومية
+        
         self.setup_ui()
         
     def setup_ui(self):
@@ -40,7 +40,7 @@ class Calculator:
         
         self.root.configure(bg=bg_color)
         
-        # شاشة العرض
+        
         self.display_var = tk.StringVar()
         self.display_var.set("0")
         
@@ -60,11 +60,11 @@ class Calculator:
         )
         self.display.pack(fill=tk.X, ipady=10)
         
-        # إطار الأزرار
+        
         buttons_frame = tk.Frame(self.root, bg=bg_color)
         buttons_frame.pack(pady=10, padx=20, fill=tk.BOTH, expand=True)
         
-        # تعريف الأزرار
+        
         buttons = [
             ['C', '±', '%', '÷'],
             ['7', '8', '9', '×'],
@@ -73,11 +73,11 @@ class Calculator:
             ['0', '.', '=']
         ]
         
-        # إنشاء الأزرار
+        
         for i, row in enumerate(buttons):
             for j, button_text in enumerate(row):
                 if button_text == '0':
-                    # زر الصفر يأخذ مساحة أكبر
+                    
                     btn = tk.Button(
                         buttons_frame,
                         text=button_text,
@@ -90,7 +90,7 @@ class Calculator:
                     )
                     btn.grid(row=i, column=j, columnspan=2, sticky="nsew", padx=2, pady=2)
                 elif button_text == '=':
-                    # زر المساواة
+                   
                     btn = tk.Button(
                         buttons_frame,
                         text=button_text,
@@ -103,7 +103,7 @@ class Calculator:
                     )
                     btn.grid(row=i, column=j+1, sticky="nsew", padx=2, pady=2)
                 else:
-                    # باقي الأزرار
+                    
                     if button_text in ['÷', '×', '-', '+', '%', '±', 'C']:
                         color = operator_color if button_text in ['÷', '×', '-', '+'] else button_color
                     else:
@@ -121,7 +121,7 @@ class Calculator:
                     )
                     btn.grid(row=i, column=j, sticky="nsew", padx=2, pady=2)
         
-        # تكوين الشبكة للتمدد
+        
         for i in range(5):
             buttons_frame.grid_rowconfigure(i, weight=1)
         for j in range(4):
@@ -154,7 +154,7 @@ class Calculator:
             self.current_input = number
             self.new_number = False
         else:
-            if len(self.current_input) < 15:  # حد أقصى للأرقام
+            if len(self.current_input) < 15:  
                 self.current_input += number
         
         self.display_var.set(self.current_input)
@@ -198,7 +198,7 @@ class Calculator:
                         return
                     result = self.total / current_number
                 
-                # تنسيق النتيجة
+                
                 if result == int(result):
                     result = int(result)
                 else:
@@ -252,14 +252,14 @@ def main():
     root = tk.Tk()
     app = Calculator(root)
     
-    # ربط اختصارات لوحة المفاتيح
+    
     root.bind('<Key>', lambda event: app.keyboard_input(event))
     root.focus_set()
     
-    # تشغيل التطبيق
+   
     root.mainloop()
 
-# إضافة دعم لوحة المفاتيح
+
 def keyboard_input(self, event):
     """معالجة إدخال لوحة المفاتيح"""
     key = event.char
@@ -280,7 +280,7 @@ def keyboard_input(self, event):
     elif event.keysym == 'Escape':
         self.button_click('C')
 
-# ربط دالة لوحة المفاتيح بالفئة
+
 Calculator.keyboard_input = keyboard_input
 
 if __name__ == "__main__":
