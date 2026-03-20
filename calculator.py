@@ -10,10 +10,10 @@ from tkinter import messagebox
 import math
 
 class Calculator:
-    """فئة الآلة الحاسبة الرئيسية"""
+   
     
     def __init__(self, root):
-        """تهيئة الآلة الحاسبة"""
+        
         self.root = root
         self.root.title("الآلة الحاسبة - Calculator")
         self.root.geometry("400x500")
@@ -29,8 +29,8 @@ class Calculator:
         self.setup_ui()
         
     def setup_ui(self):
-        """إعداد واجهة المستخدم الرسومية"""
-        # إعداد الألوان والخطوط
+       
+       
         bg_color = "#2C3E50"
         button_color = "#34495E"
         number_color = "#3498DB"
@@ -128,7 +128,7 @@ class Calculator:
             buttons_frame.grid_columnconfigure(j, weight=1)
     
     def button_click(self, char):
-        """معالجة النقر على الأزرار"""
+        
         try:
             if char.isdigit():
                 self.number_click(char)
@@ -160,7 +160,7 @@ class Calculator:
         self.display_var.set(self.current_input)
     
     def decimal_click(self):
-        """معالجة النقر على العلامة العشرية"""
+        
         if self.new_number:
             self.current_input = "0."
             self.new_number = False
@@ -170,7 +170,7 @@ class Calculator:
         self.display_var.set(self.current_input)
     
     def operator_click(self, operator):
-        """معالجة النقر على العمليات"""
+        
         if not self.new_number:
             if self.operation:
                 self.equals_click()
@@ -181,7 +181,7 @@ class Calculator:
         self.new_number = True
     
     def equals_click(self):
-        """معالجة النقر على زر المساواة"""
+        
         if self.operation and not self.new_number:
             try:
                 current_number = float(self.current_input)
@@ -215,11 +215,11 @@ class Calculator:
                 self.clear_all()
     
     def clear_click(self):
-        """معالجة النقر على زر المسح"""
+        
         self.clear_all()
     
     def clear_all(self):
-        """مسح جميع البيانات"""
+       
         self.current_input = ""
         self.total = 0
         self.operation = None
@@ -227,7 +227,7 @@ class Calculator:
         self.display_var.set("0")
     
     def plus_minus_click(self):
-        """معالجة تغيير الإشارة"""
+        
         if self.current_input and self.current_input != "0":
             if self.current_input.startswith('-'):
                 self.current_input = self.current_input[1:]
@@ -236,7 +236,7 @@ class Calculator:
             self.display_var.set(self.current_input)
     
     def percent_click(self):
-        """معالجة النسبة المئوية"""
+        
         if self.current_input:
             try:
                 result = float(self.current_input) / 100
@@ -248,7 +248,7 @@ class Calculator:
                 messagebox.showerror("خطأ", "إدخال غير صالح!")
 
 def main():
-    """الدالة الرئيسية لتشغيل التطبيق"""
+    
     root = tk.Tk()
     app = Calculator(root)
     
@@ -261,7 +261,7 @@ def main():
 
 
 def keyboard_input(self, event):
-    """معالجة إدخال لوحة المفاتيح"""
+   
     key = event.char
     if key.isdigit():
         self.button_click(key)
