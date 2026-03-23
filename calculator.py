@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-آلة حاسبة بسيطة باستخدام Tkinter
+
 Calculator App using Tkinter GUI
-"""
 
 import tkinter as tk
 from tkinter import messagebox
