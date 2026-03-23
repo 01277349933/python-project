@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-
 Calculator App using Tkinter GUI
-
 import tkinter as tk
 from tkinter import messagebox
 import math
 
 class Calculator:
    
-    
     def __init__(self, root):
         
         self.root = root
@@ -28,8 +24,7 @@ class Calculator:
         self.setup_ui()
         
     def setup_ui(self):
-       
-       
+      
         bg_color = "#2C3E50"
         button_color = "#34495E"
         number_color = "#3498DB"
