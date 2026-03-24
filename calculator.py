@@ -13,7 +13,6 @@ class Calculator:
         self.root.geometry("400x500")
         self.root.resizable(False, False)
         
-        
         self.current_input = ""
         self.total = 0
         self.operation = None
@@ -31,7 +30,6 @@ class Calculator:
         text_color = "white"
         
         self.root.configure(bg=bg_color)
-        
         
         self.display_var = tk.StringVar()
         self.display_var.set("0")
