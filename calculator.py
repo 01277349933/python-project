@@ -4,7 +4,6 @@ Calculator App using Tkinter GUI
 import tkinter as tk
 from tkinter import messagebox
 import math
-
 class Calculator:
    
     def __init__(self, root):
@@ -19,7 +18,6 @@ class Calculator:
         self.total = 0
         self.operation = None
         self.new_number = True
-        
         
         self.setup_ui()
         
@@ -273,7 +271,6 @@ def keyboard_input(self, event):
         self.button_click('=')
     elif event.keysym == 'Escape':
         self.button_click('C')
-
 
 Calculator.keyboard_input = keyboard_input
 
